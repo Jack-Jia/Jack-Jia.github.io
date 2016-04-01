@@ -66,6 +66,7 @@ opacity:0;
 transform:translate(30px);
 opacity:.5;
 }
+
  100% {
 transform:translate(60px);
 opacity:1;
