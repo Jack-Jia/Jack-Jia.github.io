@@ -1,0 +1,123 @@
+
+<!doctype html>
+<html lang="CN">
+<head>
+<meta charset="UTF-8">
+<!-- <meta charset="gb2312"> -->
+<title>Jack Jia</title>
+<meta name="keywords" content="Jack Jia" />
+<meta name="description" content="Jack Jia" />
+<link href="css/base.css" rel="stylesheet">
+<link href="css/about.css" rel="stylesheet">
+<link href="css/media.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+<!--[if lt IE 9]>
+<script src="js/modernizr.js"></script>
+<![endif]-->
+</head>
+<body>
+<div class="ibod">
+  <header>
+    <h1>Jack Jia  贾美刚</h1>
+    <h2>能改变世界的,不是只有乔布斯...</h2>
+    <div class="logo"><a href="/"></a></div>
+    <nav id="topnav"><a href="index.html">首页</a><a href="#">慢生活</a><a href="#">技术宅</a><a href="#"></a><a href="about.html">Jack Jia</a></nav>
+  </header>
+  <article>
+    <h3 class="about_h">您现在的位置是：<a href="/">首页</a>><a href="1/">Git专题</a></h3>
+    <div class="about">
+      <h2> Git客户端配置及使用</h2>
+
+
+
+
+
+
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">Git是一个开源的分布式版本控制系统，用以有效、高速的处理从很小到非常大的项目版本管理。</span></p><p>
+</p><p><span style="color: rgb(51, 51, 51); font-family: &#39;Helvetica Neue&#39;; text-indent: 28px; widows: 1; background-color: rgb(255, 255, 255); font-size: 18px;">分布式相比于集中式的最大区别在于开发者可以提交到本地，每个开发者通过克隆（git clone），在本地机器上拷贝一个完整的Git仓库。</span></p><p>
+</p><p><img border="0" _src="Git客户端配置及使用_files/9d68e3f5-fbd0-455d-9c3a-ca25271bfc7c.png" src="Git客户端配置及使用_files/9d68e3f5-fbd0-455d-9c3a-ca25271bfc7c.png" /></p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;"></span></p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">从一般开发者的角度</span></p><p>
+</p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">1、从服务器上克隆完整的Git仓库（包括代码和版本信息）到单机上。</span></p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">2、在自己的机器上根据不同的开发目的，创建分支，修改代码。</span></p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">3、在单机上自己创建的分支上提交代码。</span></p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">4、在单机上合并分支。</span></p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">5、把服务器上最新版的代码fetch下来，然后跟自己的主分支合并。</span></p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">6、生成补丁（patch），把补丁发送给主开发者。</span></p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">7、看主开发者的反馈，如果主开发者发现两个一般开发者之间有冲突（他们之间可以合作解决的冲突），就会要求他们先解决冲突，然后再由其中一个人提交。如果主开发者可以自己解决，或者没有冲突，就通过。</span></p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">8、一般开发者之间解决冲突的方法，开发者之间可以使用pull 命令解决冲突，解决完冲突之后再向主开发者提交补丁。</span></p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">从主开发者的角度（假设主开发者不用开发代码）看，git有以下功能：</span></p><p>
+</p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">1、查看邮件或者通过其它方式查看一般开发者的提交状态。</span></p><p>
+</p><p><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">2、打上补丁，解决冲突（可以自己解决，也可以要求开发者之间解决以后再重新提交，如果是开源项目，还要决定哪些补丁有用，哪些不用）。</span></p><p>
+</p><p>
+</p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;">3、向公共服务器提交结果，然后通知所有开发人员。</span></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;"><br/></span></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;"><br/></span></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 18px; font-family: &#39;Helvetica Neue&#39;;"><strong style="font-size: 14px;"><span style="font-size: 24px;">操作文档</span></strong></span></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-family: Helvetica, &#39;Hiragino Sans GB&#39;, &#39;Microsoft Yahei&#39;, SimSun, SimHei, arial, sans-serif; white-space: normal; font-size: 18px;"><div style="font-size: 14px;"><div style="padding: 10px; tab-size: 4; overflow: auto; border: 1px solid rgb(221, 221, 221); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; widows: 1; background-color: rgb(250, 250, 250);"><p><span style="font-size: 18px; color: rgb(255, 0, 0);"></span></p><p style="white-space: normal;"><span style="color: rgb(255, 0, 0); font-size: 18px; text-indent: 2em; line-height: 1.6;">客户端: &nbsp;Mac OS X Yosemite<br/></span></p><p style="white-space: normal;"></p><p style="white-space: normal;"></p><p style="white-space: normal;"><span style="font-size: 18px; color: rgb(255, 0, 0);">软件: git , SourceTree</span></p><p></p><p><span style="font-size: 14px;"></span></p><span style="font-family: Helvetica, &#39;Hiragino Sans GB&#39;, &#39;Microsoft Yahei&#39;, SimSun, SimHei, arial, sans-serif; font-size: 18px;"></span><span style="font-size: 18px;"></span></div></div><span style="font-size: 14px;"></span></span></p><p style="white-space: normal;"><span style="font-size: 14px;"></span></p><p style="text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 24px; font-family: &#39;Helvetica Neue&#39;;"><strong><span style="color: rgb(51, 51, 51); font-size: 24px; line-height: 28px;">一.生成密钥给管理员</span></strong></span></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"></span></p><p><span style="font-size: 18px;">(1)在开发机上<span style="color: rgb(51, 51, 51); font-family: 宋体; text-indent: 28px; widows: 1; background-color: rgb(248, 248, 248);">使用命令生成密钥</span></span></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 14px;">
+</span></p><p><span style="color: rgb(255, 38, 0); font-size: 18px;">&nbsp;ssh-keygen -t rsa</span></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 14px;">
+</span></p><p><span style="font-size: 18px; color: rgb(245, 52, 35);"></span></p><p><img border="0" _src="Git客户端配置及使用_files/45b29a99-3e07-4ecc-ba53-3c1f6fbe14ad.png" src="Git客户端配置及使用_files/45b29a99-3e07-4ecc-ba53-3c1f6fbe14ad.png" /></p><p><span style="font-size: 18px; color: rgb(245, 52, 35);"></span></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 14px;">
+</span></p><p><br/></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 14px;">
+
+</span></p><p><span style="font-size: 18px;">成功后会在用户目录生成.ssh文件(.ssh为隐藏文件)</span></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 14px;">
+</span></p><p>
+</p><p><span style="font-size: 18px;">.ssh文件中可以看到<span style="color: rgb(51, 51, 51); font-family: 宋体; text-indent: 28px; widows: 1; background-color: rgb(248, 248, 248);">id_rsa和id_rsa.pub两个文件.</span></span></p><p>
+</p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 14px;">
+</span></p><p><span style="font-size: 18px; color: rgb(51, 51, 51); font-family: 宋体; text-indent: 28px; widows: 1; background-color: rgb(248, 248, 248);">id_rsa.pub为公钥文件</span></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 14px;">
+
+</span></p><p><span style="font-size: 18px;">(2)通过scp发送到服务器或者邮箱直接发给管理员</span></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 14px;">
+</span></p><p><span style="font-family: Menlo; color: rgb(255, 38, 0);">scp /Users/Jack/.ssh/id_rsa.pub git@192.168.10.86:/home/git/.ssh</span></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 14px;">
+</span></p><p><img border="0" _src="Git客户端配置及使用_files/87acfebc-c851-49ac-993e-79c82bfcbdb8.png" src="Git客户端配置及使用_files/87acfebc-c851-49ac-993e-79c82bfcbdb8.png" /></p><p style="color: rgb(51, 51, 51); font-size: 14px;"><span style="font-size: 14px;">
+
+</span></p><p><br/></p><p><br/></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><strong><span style="font-size: 24px; font-family: &#39;Helvetica Neue&#39;;">二.安装git</span></strong></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"><span style="font-size: 18px;">安装<span style="padding: 0px; color: rgb(51, 51, 51); font-family: verdana, Arial, Helvetica, sans-serif; widows: 1; background-color: rgb(255, 255, 255);">Homebrew:</span></span><span style="font-size: 14px;">
+</span></span></p><p>
+<span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 28px; text-indent: 30px; widows: 1; background-color: rgb(255, 255, 255);">ruby&nbsp;-e&nbsp;&quot;$(curl&nbsp;-fsSL&nbsp;https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</span>
+</p><p><span style="font-size: 18px; font-family: &#39;Courier New&#39;, monospace; background-color: rgb(247, 247, 247);">安装git:</span></p><p><span style="color: rgb(255, 0, 0); font-size: 18px; line-height: 28px; text-indent: 30px; widows: 1; background-color: rgb(255, 255, 255);">brew&nbsp;install&nbsp;git</span></p><p>
+</p><p><span style="font-size: 18px;">完成安装需设置邮箱和用户名</span></p><p>
+</p><p>
+</p><p><span style="font-size: 18px; color: rgb(255, 0, 0);">git config --global user.email &quot;you@example.com&quot;</span></p><p>
+</p><p><span style="font-size: 18px; color: rgb(255, 0, 0);">git config --global user.name &quot;Your Name&quot;&nbsp;</span></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"></span><br/></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"><strong style="font-size: 14px;"><span style="font-size: 18px;">三.工具: SourceTree</span></strong></span></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"><strong style="font-size: 14px;"><span style="font-size: 18px;"></span></strong></span></p><p><img border="0" _src="Git客户端配置及使用_files/c769e1dc-790d-41ca-b8d5-12fe1249e86b.png" src="Git客户端配置及使用_files/c769e1dc-790d-41ca-b8d5-12fe1249e86b.png" /></p><p><span style="font-size: 18px;"></span></p><p><span style="font-size: 18px;">(1)下载安装SourceTree</span></p><p><span style="font-size: 14px;">
+</span></p><p><span style="font-size: 18px;">(2)sourceTree设置中添加用户</span></p><p><span style="font-size: 14px;">
+</span></p><p><img border="0" _src="Git客户端配置及使用_files/bc3044fb-0abd-448a-b7a4-8634b35324f4.png" src="Git客户端配置及使用_files/bc3044fb-0abd-448a-b7a4-8634b35324f4.png" /></p><p><span style="font-size: 14px;">
+</span></p><p><span style="font-size: 18px;">(3)新仓库—从Url克隆(从管理员处获取)</span></p><p><span style="font-size: 14px;">
+</span></p><p><span style="font-size: 18px;">通过url克隆仓库到桌面</span></p><p><img border="0" _src="Git客户端配置及使用_files/5c740528-461b-4711-a747-7d4a7d40a72c.png" src="Git客户端配置及使用_files/5c740528-461b-4711-a747-7d4a7d40a72c.png" /></p><p><span style="font-size: 14px;">
+</span></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"><br/></span></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"></span></p><p><img border="0" width="821" height="571" style="width: 821px; height: 571px;" _src="Git客户端配置及使用_files/5142942.png" src="Git客户端配置及使用_files/5142942.png" /></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"></span><br/></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"><br/></span></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"><br/></span></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"><br/></span></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"><br/></span></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><span style="font-size: 18px;"></span></p><p><br/></p><p style="font-size: 14px; text-indent: 30px; white-space: normal; widows: 1; color: rgb(51, 51, 51);"><br/></p><p style="font-size: 14px; white-space: normal; color: rgb(51, 51, 51); text-indent: 28px; widows: 1;"><span style="font-family: Helvetica, &#39;Hiragino Sans GB&#39;, &#39;Microsoft Yahei&#39;, SimSun, SimHei, arial, sans-serif; font-size: 18px;"></span></p><div style="font-size: 14px;"><div style="padding: 10px; tab-size: 4; overflow: auto; border: 1px solid rgb(221, 221, 221); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; widows: 1; background-color: rgb(250, 250, 250);"><p style="white-space: normal;"><span style="color: rgb(255, 0, 0); font-size: 18px; text-indent: 2em; line-height: 1.6;"></span></p><p style="white-space: normal;"><span style="color: rgb(255, 0, 0); font-size: 18px; text-indent: 2em; line-height: 1.6;">客户端: &nbsp;windows 7</span></p><p style="white-space: normal;"><span style="font-size: 18px; color: rgb(255, 0, 0);">软件: git , SourceTree</span></p><p><span style="font-size: 14px;"></span></p><span style="font-family: Helvetica, &#39;Hiragino Sans GB&#39;, &#39;Microsoft Yahei&#39;, SimSun, SimHei, arial, sans-serif; font-size: 18px;"></span><span style="font-size: 18px;"></span></div></div><p><span style="font-size: 14px;"></span></p><p></p><p style="white-space: normal;"><span style="font-size: 14px;"></span></p><p style="font-size: 14px; white-space: normal; color: rgb(51, 51, 51);"></p><p style="color: rgb(51, 51, 51); font-size: 14px; text-indent: 28px; white-space: normal; widows: 1;"><br/></p><p><strong><span style="font-size: 24px;">一.下载git<span style="line-height: 28px; text-indent: 30px; widows: 1; background-color: rgb(255, 255, 255);">并安装</span>:</span></strong></p><p><span style="font-size: 18px;">1.下载地址:</span></p><p><a href="http://"><span style="font-size: 18px; color: rgb(255, 0, 0);"></span></a><a href="http://"><span style="font-size: 18px; color: rgb(255, 0, 0);">https://git-for-windows.github.io</span></a></p><p><span style="font-size: 18px;">2.安装完成需要在Git Bash中</span></p><p><span style="font-size: 14px;">
+</span></p><p>
+</p><p><span style="font-size: 18px;">设置邮箱和用户名</span></p><p>
+</p><p><span style="font-size: 18px;">git config --global user.email &quot;you@example.com&quot;</span></p><p>
+</p><p><span style="font-size: 14px;">
+</span></p><p><span style="font-size: 18px;">git config --global user.name &quot;Your Name&quot;</span></p><p><span style="font-size: 14px;">
+
+</span></p><p><span style="font-size: 18px;"></span></p><p><img border="0" _src="file:///var/folders/z2/47y_wcqs473gytljfq588vfh0000gn/T/cn.wiz.wiznoteformac/WizNote/15899422.png" src="Git客户端配置及使用_files/15899422.png" /></p><p><span style="font-size: 18px;"></span><br/></p><p><span style="font-size: 14px;">
+</span></p><p><span style="font-size: 24px;"><strong>二.获取ssh key值发送管理员</strong></span></p><p><span style="font-size: 18px;">1.在git bash 下生成key</span></p><p><span style="font-size: 14px;">
+</span></p><div style="font-size: 14px;"><span style="font-size: 18px; color: rgb(255, 0, 0);">ssh-keygen -t rsa</span></div><p><span style="font-size: 14px;">
+</span></p><div style="font-size: 14px;"><span style="font-size: 18px;">一直空格即可</span></div><div><img border="0" src="Git客户端配置及使用_files/0aa52671-31c7-4d63-a20e-1548f86605f7.png" /></div><p><span style="font-size: 18px; line-height: 28px; white-space: normal;"></span></p><p style="white-space: normal;"><span style="font-size: 18px;">2通过scp发送到服务器或者邮箱直接发给管理员</span></p><p style="font-size: 14px; white-space: normal; color: rgb(51, 51, 51);"></p><p style="white-space: normal;"><span style="font-family: Menlo; color: rgb(255, 38, 0);">scp /Users/Jack/.ssh/id_rsa.pub git@192.168.10.86:/home/git/.ssh</span></p><p style="font-size: 14px; white-space: normal; color: rgb(51, 51, 51);"></p><p style="white-space: normal;"><img border="0" _src="Git客户端配置及使用_files/87acfebc-c851-49ac-993e-79c82bfcbdb8.png" src="Git客户端配置及使用_files/87acfebc-c851-49ac-993e-79c82bfcbdb8.png" /></p><p><br/><span style="font-size: 18px; line-height: 28px; white-space: normal;"></span></p><p><strong><span style="font-size: 24px;">三.下载安装<span style="font-family: Verdana;">sourceTree</span></span></strong></p><p><span style="font-size: 18px;"><span style="font-family: Verdana;">1.下载</span></span></p><p><span style="font-family: Verdana; font-size: 18px;"><a href="https://www.sourcetreeapp.com/download/" style="white-space: normal;"><span style="font-family: Verdana; font-size: 18px; color: rgb(255, 0, 0);">https://www.sourcetreeapp.com/download/</span></a></span></p><p><span style="font-family: Verdana; font-size: 18px;"></span></p><p><span style="font-size: 18px; font-family: Verdana;">需要运行库(建议去网上下载安装,原代的很慢)</span></p><p><span style="font-size: 14px;">
+</span></p><p><span style="font-size: 18px; font-family: Verdana;">Microsoft .NET Framework 4.5</span></p><p><span style="font-size: 14px;">
+</span></p><p><span style="font-size: 18px;">安装完成打开会弹出 选最后一个</span></p><p><img border="0" _src="file:///var/folders/z2/47y_wcqs473gytljfq588vfh0000gn/T/cn.wiz.wiznoteformac/WizNote/e5c0eb76-b103-4ae9-b9df-fa7be26c6425.png" src="Git客户端配置及使用_files/e5c0eb76-b103-4ae9-b9df-fa7be26c6425.png" /></p><p><br/></p><p><span style="font-size: 14px;">
+</span></p><p><br/></p><p><span style="font-family: &#39;Helvetica Neue&#39;;"><span style="font-size: 18px;">2.打开</span><span style="font-size: 18px;">sourceTree</span></span></p><p><span style="font-size: 14px; font-family: &#39;Helvetica Neue&#39;;">
+</span></p><p><span style="font-family: &#39;Helvetica Neue&#39;; font-size: 18px;">工具-选项,弹出选项卡第三个git选项，使用系统git</span></p><p><span style="font-family: &#39;Helvetica Neue&#39;; font-size: 18px;"><br/></span></p><p><span style="font-family: &#39;Helvetica Neue&#39;; font-size: 18px;"></span></p><div><img border="0" src="Git客户端配置及使用_files/7d609939-ffe8-417e-b47c-f7a95807d42d.png" /></div><p><span style="font-family: &#39;Helvetica Neue&#39;; font-size: 18px;"></span><span style="font-size: 18px;"><span style="font-family: Verdana;">在一般中选择刚生成的密钥(步骤二)</span></span></p><p><span style="font-size: 18px;"><span style="font-family: Verdana;"></span></span></p><div><img border="0" src="Git客户端配置及使用_files/66844567-b601-4646-bbed-e97ff2b56797.png" /></div><p><span style="font-size: 18px;"><span style="font-family: Verdana;"></span></span><br/></p><p><span style="font-family: &#39;Helvetica Neue&#39;; font-size: 18px;"></span></p><div style="font-size: 14px;"><span style="font-size: 18px;">3.点击克隆新建</span></div><p><span style="font-size: 14px;">
+</span></p><div style="font-family:宋体;font-size:18px;"><span style="color: rgb(255, 0, 0); background-color: rgb(248, 248, 248);">git@192.168.10.186:/home/git/myRepository.git</span></div><p><span style="font-family: &#39;Helvetica Neue&#39;; font-size: 18px;"></span></p><div><img border="0" src="Git客户端配置及使用_files/299e390b-4bd2-4408-8115-b02aea1ce52c.png" /></div><p><span style="font-family: &#39;Helvetica Neue&#39;; font-size: 18px;"></span></p><div style="font-size: 14px;"><span style="font-size: 18px;">添加保存路径,点击克隆,即把服务器仓库考到本地</span></div><p><span style="font-size: 14px;">
+</span></p><span style="font-size: 18px;"><br/></span><p><span style="font-size: 14px;">
+</span></p><br/>
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="font-size:20px;color:red;">写博文不易,转载请注明:<br>本文作者:Jack Jia  <br>微博: <a href="http://weibo.com/5794889317/profile?topnav=1&wvr=6&is_all=1">筑梦小丑_Dream</a><br>博客地址<a href="http://blog.csdn.net/jackjia2015">http://blog.csdn.net/jackjia2015</a>  </span>
+
+      <ul class="blog_a">
+      </ul>
+    </div>
+  </article>
+
+  <script src="js/silder.js"></script>
+  <div class="clear"></div>
+  <!-- 清除浮动 --> 
+</div>
+</body>
+</html>
